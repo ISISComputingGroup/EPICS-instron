@@ -6,6 +6,6 @@ getCurrentControlChannel {
 }
 
 setCurrentControlChannel {
-    out "C300,%d"
+    out "C300,%d";
 	@init { getCurrentControlChannel; }
 }
