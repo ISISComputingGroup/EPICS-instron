@@ -20,3 +20,13 @@ setWatchdogStatus {
 	@init { getWatchdogStatus; }
 }
 
+getControlMode {
+    out "Q909";
+	in "%d";
+}
+
+setControlMode {
+	out "P909,%d";
+	@init { getControlMode; }
+}
+
