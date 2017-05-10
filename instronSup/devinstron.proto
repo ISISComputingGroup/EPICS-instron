@@ -9,3 +9,14 @@ setCurrentControlChannel {
     out "C300,%d";
 	@init { getCurrentControlChannel; }
 }
+
+getWatchdogStatus {
+    out "Q904";
+	in "%d%*s";
+}
+
+setWatchdogStatus {
+	out "C904,%d,0";
+	@init { getWatchdogStatus; }
+}
+
