@@ -35,3 +35,23 @@ getStatus {
     in "%d";
 }
 
+arbW {
+    ExtraInput = Ignore;
+    out "%s"; 
+}
+
+arbRW {
+    ExtraInput = Ignore;
+    out "%s"; 
+    in "%60c"
+}
+
+getActuatorStatus {
+    out "Q23";
+	in "%d";
+}
+
+setActuatorStatus {
+    out "C23,%d";
+}
+
