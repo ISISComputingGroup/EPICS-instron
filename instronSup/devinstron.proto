@@ -30,3 +30,8 @@ setControlMode {
 	@init { getControlMode; }
 }
 
+getStatus {
+    out "Q22";
+    in "%d";
+}
+
