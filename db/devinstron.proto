@@ -30,6 +30,14 @@ setControlMode {
 	@init { getControlMode; }
 }
 
+setControlModeCom {
+    out "P909,1";
+}
+
+setControlModeFp {
+    out "P909,0";
+}
+
 getStatus {
     out "Q22";
     in "%d";
@@ -53,5 +61,15 @@ getActuatorStatus {
 
 setActuatorStatus {
     out "C23,%d";
+}
+
+getMovementType {
+    out "Q1";
+	in "%d";
+}
+
+setMovementType {
+	out "C1,%d";
+	@init { getMovementType; }
 }
 
