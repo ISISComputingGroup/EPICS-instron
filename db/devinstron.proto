@@ -19,8 +19,8 @@ getWatchdogStatus {
 	in "%d%*s";
 }
 
-setWatchdogStatus {
-	out "C904,%d,0";
+disableWatchdog {
+	out "C904,0,0";
 	@init { getWatchdogStatus; }
 }
 
@@ -76,6 +76,12 @@ getMovementType {
 # Blocks of commands
 #
 
+initRoutine {
+    setControlModeCom;
+    disableWatchdog;
+    setControlModeFp;
+}
+
 panicStop {
     setControlModeCom;
     out "C23,0";
@@ -86,6 +92,12 @@ setMovementType {
     setControlModeCom;
 	out "C1,%d";
     setControlModeFp;
-	@init { getMovementType; }
+}
+
+stopAndStartMovement {
+    setControlModeCom;
+    out "C1,0";
+    out "C1,1";
+    setControlModeFp;
 }
 
