@@ -1,5 +1,9 @@
 Terminator = CR LF;
 
+#
+# Individual commands
+#
+
 getCurrentControlChannel {
     out "Q300";
 	in "%d";
@@ -68,8 +72,20 @@ getMovementType {
 	in "%d";
 }
 
+#
+# Blocks of commands
+#
+
+panicStop {
+    setControlModeCom;
+    out "C23,0";
+    setControlModeFp;
+}
+
 setMovementType {
+    setControlModeCom;
 	out "C1,%d";
+    setControlModeFp;
 	@init { getMovementType; }
 }
 
