@@ -47,14 +47,8 @@ getStatus {
     in "%d";
 }
 
-arbW {
-    ExtraInput = Ignore;
-    out "%s"; 
-}
-
 arbRW {
-    ExtraInput = Ignore;
-    out "%s"; 
+    out "%(\$1.VAL)s";  
     in "%60c"
 }
 
