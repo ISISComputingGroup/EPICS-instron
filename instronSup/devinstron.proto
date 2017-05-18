@@ -47,11 +47,6 @@ getStatus {
     in "%d";
 }
 
-arbRW {
-    out "%(\$1.VAL)s";  
-    in "%60c"
-}
-
 getActuatorStatus {
     out "Q23";
 	in "%d";
@@ -92,6 +87,14 @@ stopAndStartMovement {
     setControlModeCom;
     out "C1,0";
     out "C1,1";
+    setControlModeFp;
+}
+
+
+arbRW {
+    setControlModeCom;
+    out "%(\$1.VAL)s";  
+    in "%60c";
     setControlModeFp;
 }
 
