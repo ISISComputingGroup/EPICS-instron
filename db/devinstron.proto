@@ -1,0 +1,100 @@
+Terminator = CR LF;
+
+#
+# Individual commands
+#
+
+getCurrentControlChannel {
+    out "Q300";
+	in "%d";
+}
+
+setCurrentControlChannel {
+    out "C300,%d";
+	@init { getCurrentControlChannel; }
+}
+
+getWatchdogStatus {
+    out "Q904";
+	in "%d%*s";
+}
+
+disableWatchdog {
+	out "C904,0,0";
+	@init { getWatchdogStatus; }
+}
+
+getControlMode {
+    out "Q909";
+	in "%d";
+}
+
+setControlMode {
+	out "P909,%d";
+	@init { getControlMode; }
+}
+
+setControlModeCom {
+    out "P909,1";
+}
+
+setControlModeFp {
+    out "P909,0";
+}
+
+getStatus {
+    out "Q22";
+    in "%d";
+}
+
+getActuatorStatus {
+    out "Q23";
+	in "%d";
+}
+
+setActuatorStatus {
+    out "C23,%d";
+}
+
+getMovementType {
+    out "Q1";
+	in "%d";
+}
+
+#
+# Blocks of commands
+#
+
+initRoutine {
+    setControlModeCom;
+    disableWatchdog;
+    setControlModeFp;
+}
+
+panicStop {
+    setControlModeCom;
+    out "C23,0";
+    setControlModeFp;
+}
+
+setMovementType {
+    setControlModeCom;
+	out "C1,%d";
+    setControlModeFp;
+}
+
+stopAndStartMovement {
+    setControlModeCom;
+    out "C1,0";
+    out "C1,1";
+    setControlModeFp;
+}
+
+
+arbRW {
+    setControlModeCom;
+    out "%(\$1.VAL)s";  
+    in "%60c";
+    setControlModeFp;
+}
+
