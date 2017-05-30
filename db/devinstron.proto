@@ -16,7 +16,6 @@ getWatchdogStatus {
 
 disableWatchdog {
 	out "C904,0,0";
-	@init { getWatchdogStatus; }
 }
 
 getControlMode {
@@ -93,6 +92,5 @@ setCurrentControlChannel {
     setControlModeCom;
     out "C300,%d";
     setControlModeFp;
-	@init { getCurrentControlChannel; }
 }
 
