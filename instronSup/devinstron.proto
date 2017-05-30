@@ -9,11 +9,6 @@ getCurrentControlChannel {
 	in "%d";
 }
 
-setCurrentControlChannel {
-    out "C300,%d";
-	@init { getCurrentControlChannel; }
-}
-
 getWatchdogStatus {
     out "Q904";
 	in "%d%*s";
@@ -50,10 +45,6 @@ getStatus {
 getActuatorStatus {
     out "Q23";
 	in "%d";
-}
-
-setActuatorStatus {
-    out "C23,%d";
 }
 
 getMovementType {
@@ -96,5 +87,12 @@ arbRW {
     out "%(\$1.VAL)s";  
     in "%60c";
     setControlModeFp;
+}
+
+setCurrentControlChannel {
+    setControlModeCom;
+    out "C300,%d";
+    setControlModeFp;
+	@init { getCurrentControlChannel; }
 }
 
