@@ -96,12 +96,34 @@ setCurrentControlChannel {
 
 setStepTime {
     setControlModeCom;
-    out "C2,\$1,%f";
+    out "C86,\$1,%f";
     setControlModeFp;
 }
 
 getStepTime {
+    out "Q86,\$1";
+    in "%f";
+}
+
+setChanWaveType {
+    setControlModeCom;
+    out "C2,\$1,%d";
+    setControlModeFp;
+}
+
+getChanWaveType {
     out "Q2,\$1";
+    in "%d";
+}
+
+setRampAmpSP {
+    setControlModeCom;
+    out "C4,\$1,%f";
+    setControlModeFp;
+}
+
+getRampAmpSP {
+    out "Q4,\$1";
     in "%f";
 }
 
