@@ -94,3 +94,14 @@ setCurrentControlChannel {
     setControlModeFp;
 }
 
+setStepTime {
+    setControlModeCom;
+    out "C2,\$1,%f";
+    setControlModeFp;
+}
+
+getStepTime {
+    out "Q2,\$1";
+    in "%f";
+}
+
