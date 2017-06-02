@@ -127,3 +127,8 @@ getRampAmpSP {
     in "%f";
 }
 
+getCurrentFeedback {
+    out "Q134,\$1,0";
+    in "%f";
+}
+
