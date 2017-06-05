@@ -137,3 +137,8 @@ getChanScale {
     in "%f";
 }
 
+getStrainLength {
+    out "Q340,3";
+    in "%f";
+}
+
