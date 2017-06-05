@@ -132,3 +132,8 @@ getCurrentFeedback {
     in "%f";
 }
 
+getChanScale {
+    out "Q308,\$1";
+    in "%f";
+}
+
