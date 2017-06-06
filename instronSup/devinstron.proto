@@ -144,12 +144,12 @@ getStrainLength {
 
 setArea {
     setControlModeCom;
-    out "C341,\$1,%d";
+    out "C341,\$1,%f";
     setControlModeFp;
 }
 
 getArea {
     out "Q341,\$1";
-    in "%d";
+    in "%f";
 }
 
