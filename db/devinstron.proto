@@ -138,7 +138,18 @@ getChanScale {
 }
 
 getStrainLength {
-    out "Q340,3";
+    out "Q340,\$1";
     in "%f";
+}
+
+setArea {
+    setControlModeCom;
+    out "C341,\$1,%d";
+    setControlModeFp;
+}
+
+getArea {
+    out "Q341,\$1";
+    in "%d";
 }
 
