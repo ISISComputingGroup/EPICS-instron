@@ -153,3 +153,7 @@ getArea {
     in "%f";
 }
 
+getType {
+    out "Q307,\$1";
+    in "%(\$2:TYPE:STANDARD)f,%f"
+}
