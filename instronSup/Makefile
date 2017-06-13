@@ -3,7 +3,7 @@ include $(TOP)/configure/CONFIG
 #=======================================
 
 # Install .proto file
-DATA += $(TOP)/instronSup/devinstron.proto
+DATA += devinstron.proto
 
 #=======================================
 include $(TOP)/configure/RULES
