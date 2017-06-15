@@ -1,5 +1,5 @@
-InTerminator = "";
-OutTerminator = ";";
+#InTerminator = "";
+#OutTerminator = ";";
 
 #
 # Individual commands
@@ -129,6 +129,7 @@ getRampAmpSP {
 }
 
 getCurrentFeedback {
+	disableWatchdog;
     out "Q134,\$1,0";
     in "%f";
 }
