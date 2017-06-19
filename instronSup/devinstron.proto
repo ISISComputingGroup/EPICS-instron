@@ -157,3 +157,83 @@ getType {
     out "Q307,\$1";
     in "%(\$2:TYPE:STANDARD)d,%d"
 }
+
+#
+# Waveform commands
+#
+
+getWaveformStatus {
+    out "Q200";
+    in "%f";
+}
+
+setWaveformAbort {
+    setControlModeCom;
+    out "C200,0";
+    setControlModeFp;
+}
+
+setWaveformAmplitude {
+    setControlModeCom;
+    out "C204,\$1,%f";
+    setControlModeFp;
+}
+
+setWaveformFrequency {
+    setControlModeCom;
+    out "C202,\$1,%f";
+    setControlModeFp;
+}
+
+setWaveformType {
+    setControlModeCom;
+    out "C201,\$1,%d";
+    setControlModeFp;
+}
+
+setWaveformQuartOff {
+    setControlModeCom;
+    out "C212,0";
+    setControlModeFp;
+}
+
+setWaveformQuart {
+    setControlModeCom;
+    out "C209,%d";
+    setControlModeFp;
+}
+
+getWaveformQuart {
+    out "Q210";
+}
+
+setWaveformHold {
+    setControlModeCom;
+    out "C213,3";
+    setControlModeFp;
+}
+
+setWaveformLogMaintain {
+    setControlModeCom;
+    out "C214,0";
+    setControlModeFp;
+}
+
+setWaveformQuartArm {
+    setControlModeCom;
+    out "C212,2";
+    setControlModeFp;
+}
+
+setWaveformStart {
+setWaveformStart {
+    setControlModeCom;
+    out "C200,1";
+    setControlModeFp;
+}
+
+setWaveformStop {
+    setControlModeCom;
+    out "C200,4";
+    setControlModeFp;
+}
