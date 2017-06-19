@@ -226,7 +226,6 @@ setWaveformQuartArm {
 }
 
 setWaveformStart {
-setWaveformStart {
     setControlModeCom;
     out "C200,1";
     setControlModeFp;
