@@ -1,5 +1,7 @@
 #InTerminator = "";
 #OutTerminator = ";";
+ReadTimeout = 50;
+ReplyTimeout = 500;
 
 #
 # Individual commands
