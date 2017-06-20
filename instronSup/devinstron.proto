@@ -164,7 +164,7 @@ getType {
 
 getWaveformStatus {
     out "Q200";
-    in "%f";
+    in "%d";
 }
 
 setWaveformAbort {
