@@ -28,7 +28,6 @@ getControlMode {
 
 setControlMode {
 	out "P909,%d";
-	@init { getControlMode; }
 }
 
 setControlModeCom {
