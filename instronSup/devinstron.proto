@@ -173,6 +173,18 @@ setWaveformAbort {
     setControlModeFp;
 }
 
+setWaveformStart {
+    setControlModeCom;
+    out "C200,1";
+    setControlModeFp;
+}
+
+setWaveformStop {
+    setControlModeCom;
+    out "C200,4";
+    setControlModeFp;
+}
+
 setWaveformAmplitude {
     setControlModeCom;
     out "C204,\$1,%f";
@@ -222,17 +234,5 @@ setWaveformLogMaintain {
 setWaveformQuartArm {
     setControlModeCom;
     out "C212,2";
-    setControlModeFp;
-}
-
-setWaveformStart {
-    setControlModeCom;
-    out "C200,1";
-    setControlModeFp;
-}
-
-setWaveformStop {
-    setControlModeCom;
-    out "C200,4";
     setControlModeFp;
 }
