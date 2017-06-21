@@ -1,7 +1,14 @@
 #InTerminator = "";
 #OutTerminator = ";";
-ReadTimeout = 50;
-ReplyTimeout = 500;
+
+#
+# The stress rig appears to occasionally "hang" for a fair amount of time.
+#
+# Empirically, these timeouts appear to be enough to overcome the "hang"...
+#
+ReadTimeout = 1000;
+ReplyTimeout = 1000;
+WriteTimeout = 1000;
 
 #
 # Individual commands
@@ -18,7 +25,7 @@ getWatchdogStatus {
 }
 
 disableWatchdog {
-	out "C904,0,0";
+    out "C904,0,0";
 }
 
 getControlMode {
@@ -59,7 +66,6 @@ getMovementType {
 
 initRoutine {
     setControlModeCom;
-    disableWatchdog;
     setControlModeFp;
 }
 
@@ -82,11 +88,10 @@ stopAndStartMovement {
     setControlModeFp;
 }
 
-
 arbRW {
     setControlModeCom;
     out "%(\$1.VAL)s";  
-    in "%60c";
+    in "%39c";
     setControlModeFp;
 }
 
@@ -130,7 +135,6 @@ getRampAmpSP {
 }
 
 getCurrentFeedback {
-	disableWatchdog;
     out "Q134,\$1,0";
     in "%f";
 }
