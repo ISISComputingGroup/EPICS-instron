@@ -187,20 +187,35 @@ setWaveformStop {
 
 setWaveformAmplitude {
     setControlModeCom;
-    out "C204,\$1,%f";
+    out "C203,%(\$1.RVAL)d,%f";
     setControlModeFp;
+}
+
+getWaveformAmplitude {
+    out "Q203,%(\$1.RVAL)d";
+	in "%f";
 }
 
 setWaveformFrequency {
     setControlModeCom;
-    out "C202,\$1,%f";
+    out "C202,%(\$1.RVAL)d,%f";
     setControlModeFp;
+}
+
+getWaveformFrequency {
+    out "Q202,%(\$1.RVAL)d";
+	in "%f";
 }
 
 setWaveformType {
     setControlModeCom;
-    out "C201,\$1,%d";
+    out "C201,%(\$1.RVAL)d,%d";
     setControlModeFp;
+}
+
+getWaveformType {
+    out "Q201,%(\$1.RVAL)d";
+	in "%d";
 }
 
 setWaveformQuartOff {
