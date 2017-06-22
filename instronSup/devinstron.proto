@@ -232,6 +232,7 @@ setWaveformQuart {
 
 getWaveformQuart {
     out "Q210";
+	in "%d";
 }
 
 setWaveformHold {
@@ -250,4 +251,9 @@ setWaveformQuartArm {
     setControlModeCom;
     out "C212,2";
     setControlModeFp;
+}
+
+getWaveformQuartStatus {
+    out "Q212";
+	in "%d";
 }
