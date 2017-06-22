@@ -92,6 +92,7 @@ setCurrentControlChannel {
     setControlModeCom;
     out "C300,%d";
     setControlModeFp;
+	@init { getCurrentControlChannel; }
 }
 
 setStepTime {
@@ -116,15 +117,15 @@ getChanWaveType {
     in "%d";
 }
 
+getRampAmpSP {
+    out "Q4,\$1";
+    in "%f";
+}
+
 setRampAmpSP {
     setControlModeCom;
     out "C4,\$1,%f";
     setControlModeFp;
-}
-
-getRampAmpSP {
-    out "Q4,\$1";
-    in "%f";
 }
 
 getCurrentFeedback {
