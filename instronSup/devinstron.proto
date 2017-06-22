@@ -241,7 +241,7 @@ setWaveformHold {
     setControlModeFp;
 }
 
-setWaveformLogMaintain {
+setLogMaintain {
     setControlModeCom;
     out "C214,0";
     setControlModeFp;
