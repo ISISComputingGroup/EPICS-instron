@@ -188,7 +188,7 @@ setWaveformStop {
 
 setWaveformAmplitude {
     setControlModeCom;
-    out "C203,%(\$1.RVAL)d,%f";
+    out "C203,%(\$1.RVAL)d,%.10f";
     setControlModeFp;
 }
 
