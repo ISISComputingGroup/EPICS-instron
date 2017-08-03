@@ -92,5 +92,69 @@ setCurrentControlChannel {
     setControlModeCom;
     out "C300,%d";
     setControlModeFp;
+	@init { getCurrentControlChannel; }
 }
 
+setStepTime {
+    setControlModeCom;
+    out "C86,\$1,%f";
+    setControlModeFp;
+}
+
+getStepTime {
+    out "Q86,\$1";
+    in "%f";
+}
+
+setChanWaveType {
+    setControlModeCom;
+    out "C2,\$1,%d";
+    setControlModeFp;
+}
+
+getChanWaveType {
+    out "Q2,\$1";
+    in "%d";
+}
+
+getRampAmpSP {
+    out "Q4,\$1";
+    in "%f";
+}
+
+setRampAmpSP {
+    setControlModeCom;
+    out "C4,\$1,%f";
+    setControlModeFp;
+}
+
+getCurrentFeedback {
+    out "Q134,\$1,0";
+    in "%f";
+}
+
+getChanScale {
+    out "Q308,\$1";
+    in "%f";
+}
+
+getStrainLength {
+    out "Q340,\$1";
+    in "%f";
+}
+
+setArea {
+    setControlModeCom;
+    out "C341,\$1,%f";
+    setControlModeFp;
+}
+
+getArea {
+    out "Q341,\$1";
+    in "%f";
+}
+
+getType {
+    out "Q307,\$1";
+    in "%(\$2:TYPE:STANDARD)d,%d"
+}
