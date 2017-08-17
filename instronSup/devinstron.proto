@@ -225,13 +225,18 @@ setWaveformQuartOff {
     setControlModeFp;
 }
 
-setWaveformQuart {
+getQuartCountsMax {
+    out "Q209";
+	in "%d";
+}
+
+setQuartCountsMax {
     setControlModeCom;
     out "C209,%d";
     setControlModeFp;
 }
 
-getWaveformQuart {
+getQuartCounts {
     out "Q210";
 	in "%d";
 }
