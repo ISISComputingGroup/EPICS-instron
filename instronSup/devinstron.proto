@@ -165,3 +165,108 @@ getType {
     out "Q307,\$1";
     in "%(\$2:TYPE:STANDARD)d,%d"
 }
+
+#
+# Waveform commands
+#
+
+getWaveformStatus {
+    out "Q200";
+    in "%d";
+}
+
+setWaveformAbort {
+    setControlModeCom;
+    out "C200,0";
+    setControlModeFp;
+}
+
+setWaveformStart {
+    setControlModeCom;
+    out "C200,1";
+    setControlModeFp;
+}
+
+setWaveformStop {
+    setControlModeCom;
+    out "C200,4";
+    setControlModeFp;
+}
+
+setWaveformAmplitude {
+    setControlModeCom;
+    out "C203,%(\$1.RVAL)d,%.10f";
+    setControlModeFp;
+}
+
+getWaveformAmplitude {
+    out "Q203,%(\$1.RVAL)d";
+	in "%f";
+}
+
+setWaveformFrequency {
+    setControlModeCom;
+    out "C202,%(\$1.RVAL)d,%f";
+    setControlModeFp;
+}
+
+getWaveformFrequency {
+    out "Q202,%(\$1.RVAL)d";
+	in "%f";
+}
+
+setWaveformType {
+    setControlModeCom;
+    out "C201,%(\$1.RVAL)d,%d";
+    setControlModeFp;
+}
+
+getWaveformType {
+    out "Q201,%(\$1.RVAL)d";
+	in "%d";
+}
+
+setWaveformQuartOff {
+    setControlModeCom;
+    out "C212,0";
+    setControlModeFp;
+}
+
+getQuartCountsMax {
+    out "Q209";
+	in "%d";
+}
+
+setQuartCountsMax {
+    setControlModeCom;
+    out "C209,%d";
+    setControlModeFp;
+}
+
+getQuartCounts {
+    out "Q210";
+	in "%d";
+}
+
+setWaveformHold {
+    setControlModeCom;
+    out "C213,3";
+    setControlModeFp;
+}
+
+setLogMaintain {
+    setControlModeCom;
+    out "C214,0";
+    setControlModeFp;
+}
+
+setWaveformQuartArm {
+    setControlModeCom;
+    out "C212,2";
+    setControlModeFp;
+}
+
+getWaveformQuartStatus {
+    out "Q212";
+	in "%d";
+}
