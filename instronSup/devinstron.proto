@@ -1,5 +1,5 @@
-InTerminator = "";
-OutTerminator = ";";
+#InTerminator = "";
+#OutTerminator = ";";
 
 #
 # The stress rig appears to occasionally "hang" for a fair amount of time.
