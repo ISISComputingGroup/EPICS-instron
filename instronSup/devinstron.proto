@@ -25,7 +25,7 @@ getWatchdogStatus {
 }
 
 disableWatchdog {
-    out "C904,0,0";
+    out "C904,0";
 }
 
 getControlMode {
@@ -39,6 +39,7 @@ setControlMode {
 
 setControlModeCom {
     out "P909,1";
+	disableWatchdog;
 }
 
 setControlModeFp {
